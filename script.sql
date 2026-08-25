@@ -5,17 +5,6 @@ CREATE DATABASE CrediCore;
 
 USE CrediCore;
 
--- Creamos el login a nivel de servidor
-CREATE LOGIN CrediCoreUser WITH PASSWORD = 'Contraseña_de_Prueba';
-
--- Crear el Usuario dentro de la BD CrediCore
-CREATE USER CrediCoreUser FOR LOGIN CrediCoreUser;
-
-
--- Asignamos rol db_owner
-ALTER ROLE db_owner ADD MEMBER CrediCoreUser;
-
-
 /*============================================================
 					CREAMOS NUESTROS ESQUEMAS
 =============================================================*/

@@ -6,7 +6,7 @@ CREATE DATABASE CrediCore;
 USE CrediCore;
 
 -- Creamos el login a nivel de servidor
-CREATE LOGIN CrediCoreUser WITH PASSWORD = 'Password_Fuerte2026!';
+CREATE LOGIN CrediCoreUser WITH PASSWORD = 'Contraseña_de_Prueba';
 
 -- Crear el Usuario dentro de la BD CrediCore
 CREATE USER CrediCoreUser FOR LOGIN CrediCoreUser;

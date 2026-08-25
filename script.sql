@@ -13,11 +13,15 @@ CREATE USER CrediCoreUser FOR LOGIN CrediCoreUser;
 ALTER ROLE db_owner ADD MEMBER CrediCoreUser;
 
 
-
-----------------------------------------------------------------
+/*============================================================
+					CREAMOS NUESTROS ESQUEMAS
+=============================================================*/
 CREATE SCHEMA Operaciones;
 CREATE SCHEMA Garantias;
 
+/*============================================================
+						TABLA CLIENTES
+=============================================================*/
 CREATE TABLE Operaciones.Clientes(
 	cliente_id INT IDENTITY(1, 1) PRIMARY KEY,
 	nombres VARCHAR(100) NOT NULL,
@@ -27,6 +31,9 @@ CREATE TABLE Operaciones.Clientes(
 	telefono CHAR(8) NOT NULL
 );
 
+/*============================================================
+						TABLA VEHICULOS
+=============================================================*/
 CREATE TABLE Garantias.Vehiculos(
 	vehiculo_id INT IDENTITY(1, 1) PRIMARY KEY,
 	marca VARCHAR(50) NOT NULL,
@@ -36,6 +43,9 @@ CREATE TABLE Garantias.Vehiculos(
 	placa VARCHAR(7) UNIQUE NOT NULL 
 );
 
+/*============================================================
+						TABLA CREDITOS
+=============================================================*/
 CREATE TABLE Operaciones.Creditos(
 	credito_id INT IDENTITY(1,1) PRIMARY KEY,
 	
@@ -93,7 +103,7 @@ INSERT INTO Operaciones.Creditos (cliente_id, vehiculo_id, monto_credito, tasa_i
 (5, 5, 80000.00, 0.0150);
 
 
-
+-- SELECT PARA VER LA ESTRUCTURA Y DATOS DE NUESTRAS TABLAS
 SELECT * FROM Operaciones.Creditos;
 SELECT * FROM Operaciones.Clientes;
 SELECT* FROM Garantias.Vehiculos;
